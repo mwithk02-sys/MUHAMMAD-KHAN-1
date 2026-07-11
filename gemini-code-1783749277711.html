@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saara Bashirkhel | Photostate & Stamp Makers</title>
+    <style>
+        /* --- Modern Design Token Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --brand: #2563eb;
+            --brand-hover: #1d4ed8;
+            --accent-green: #10b981;
+            --daraz-orange: #f57224;
+            --surface-bg: #fafafa;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: #ffffff;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Glassmorphism Sticky Navbar with Integrated Logo --- */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 24px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 50px; 
+            width: auto;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+        }
+
+        .logo-text {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .logo-text span {
+            color: var(--brand);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--brand);
+        }
+
+        nav a.daraz-nav-link {
+            color: var(--daraz-orange);
+            font-weight: 600;
+        }
+
+        .social-nav-links {
+            display: flex;
+            gap: 12px;
+            border-left: 1px solid var(--border-color);
+            padding-left: 20px;
+        }
+
+        .social-icon {
+            text-decoration: none;
+            font-size: 1.1rem;
+            opacity: 0.7;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .social-icon:hover {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .lang-dropdown {
+            position: relative;
+        }
+
+        .lang-btn {
+            background: var(--primary);
+            color: white;
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: #1e293b;
+        }
+
+        .lang-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 8px;
+            background: white;
+            min-width: 160px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .lang-content a {
+            color: var(--text-main);
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.88rem;
+            transition: background 0.2s;
+        }
+
+        .lang-content a:hover {
+            background: var(--surface-bg);
+            color: var(--brand);
+        }
+
+        .lang-dropdown:hover .lang-content {
+            display: block;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 40%, rgba(15, 23, 42, 0.75) 100%), 
+                        url('https://images.unsplash.com/photo-1588600878108-578307a3cc9d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 140px 24px;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);
+        }
+
+        .btn-brand { background-color: var(--brand); color: white; }
+        .btn-brand:hover { background-color: var(--brand-hover); }
+
+        .btn-whatsapp { background-color: var(--accent-green); color: white; }
+        .btn-whatsapp:hover { background-color: #059669; }
+
+        .btn-daraz { background-color: var(--daraz-orange); color: white; }
+        .btn-daraz:hover { background-color: #e05d0e; }
+
+        /* --- Section Defaults --- */
+        section {
+            padding: 100px 24px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Services Grid Style --- */
+        #services {
+            background-color: var(--surface-bg);
+            max-width: 100%;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+            border-color: #cbd5e1;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- Quote Layout View --- */
+        .owner-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(to right bottom, #ffffff, var(--surface-bg));
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .owner-quote {
+            font-size: 1.25rem;
+            color: #334155;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .owner-details h4 {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--primary);
+        }
+
+        .owner-details p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Daraz Premium Banner --- */
+        .daraz-banner {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+        }
+
+        .daraz-badge {
+            display: inline-block;
+            background-color: #ffebe0;
+            color: var(--daraz-orange);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .daraz-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .daraz-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 580px;
+        }
+
+        /* --- Pricing Dashboard --- */
+        #dashboard {
+            background-color: var(--surface-bg);
+            max-width: 100%;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 32px;
+        }
+
+        .dashboard-main {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group select, .form-group input, .form-group textarea {
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group select:focus, .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--brand);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .summary-panel {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .summary-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            font-size: 0.92rem;
+            color: #94a3b8;
+        }
+
+        .summary-item span:last-child {
+            color: white;
+            font-weight: 500;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            border-top: 1px dashed #334155;
+            padding-top: 24px;
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+
+        .summary-total span:last-child {
+            color: var(--accent-green);
+        }
+
+        /* --- Rich Dynamic Product Gallery Layout --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
+        }
+
+        .product-img-container {
+            width: 100%;
+            height: 320px;
+            background: #f8fafc;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.03);
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .product-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--brand);
+        }
+
+        .product-btn {
+            background: var(--surface-bg);
+            border: 1px solid var(--border-color);
+            color: var(--primary);
+            padding: 6px 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .product-btn:hover {
+            background: var(--brand);
+            color: white;
+            border-color: var(--brand);
+        }
+
+        /* --- Split Contact Layout --- */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .contact-details p {
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: #334155;
+        }
+
+        .social-block {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-block h4 {
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* --- Breakpoints --- */
+        @media (max-width: 968px) {
+            .dashboard-container, .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .daraz-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Grid Component -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo-container">
+                <img src="h.jpg" alt="Saara Bashirkhel Logo" class="logo-img">
+                <div class="logo-text">Saara <span>Bashirkhel</span></div>
+            </a>
+            
+            <div class="nav-right">
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="https://www.daraz.pk/shop/z8xgq7al/" target="_blank" class="daraz-nav-link">Daraz Shop</a>
+                    <a href="#dashboard">Order Online</a>
+                    <a href="#gallery">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                    
+                    <div class="social-nav-links">
+                        <a href="https://www.facebook.com/share/1DaYMKB6Xa/" target="_blank" class="social-icon" title="Facebook">📘</a>
+                        <a href="https://www.tiktok.com/@saara.zaara?_r=1&_t=ZS-97vJD61teo0" target="_blank" class="social-icon" title="TikTok">🎵</a>
+                    </div>
+                </nav>
+                
+                <div class="lang-dropdown">
+                    <button class="lang-btn">🌐 EN</button>
+                    <div class="lang-content">
+                        <a href="#" onclick="alert('Language changed to English')">English</a>
+                        <a href="#" onclick="alert('Language changed to Urdu')">اردو (Urdu)</a>
+                        <a href="#" onclick="alert('Language changed to Pashto')">پښتو (Pashto)</a>
+                        <a href="#" onclick="alert('Language changed to Arabic')">العربية (Arabic)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" style="max-width:100%;">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Modern Printing & Professional Stamp Making Layouts</h1>
+                <p>High-speed crystal document duplication, verified online submission processing, and precise machine-engraved custom stamp systems tailored in Madyan.</p>
+                <div class="btn-container">
+                    <a href="#dashboard" class="btn btn-brand">🛒 Order Dashboard</a>
+                    <a href="https://www.daraz.pk/shop/z8xgq7al/" target="_blank" class="btn btn-daraz">Daraz Store</a>
+                    <a href="https://wa.me/923157430208" target="_blank" class="btn btn-whatsapp">WhatsApp Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services">
+        <div class="section-header">
+            <h2 class="section-title">Production Ecosystem</h2>
+            <p class="section-subtitle">Delivering precision engineering and clean duplication solutions across every layout dimension.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Custom Stamp Systems</h3>
+                <p>Industrial Flash Stamps, clean durable rubber options, and verified corporate seal templates.</p>
+            </div>
+            <div class="service-card">
+                <h3>High-Volume Duplication</h3>
+                <p>High-speed photostat frameworks and rich high-definition color matrix outputs for document packets.</p>
+            </div>
+            <div class="service-card">
+                <h3>Passport Frame Capture</h3>
+                <p>Instant precision graphical capture with balanced backdrops optimized for biometric document uploads.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital Node Submissions</h3>
+                <p>Comprehensive managed solutions for academic applications, job boards, and verified degree portal tracks.</p>
+            </div>
+            <div class="service-card">
+                <h3>Academic Composing</h3>
+                <p>Professional custom processing setups for notes, clean structural digital reports, and school parameters.</p>
+            </div>
+            <div class="service-card">
+                <h3>Corporate Stationeries</h3>
+                <p>Premium crisp visiting interfaces, company ledger pads, and balanced commercial advertising flyers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Quote Block -->
+    <section id="owner-message">
+        <div class="owner-card">
+            <p class="owner-quote">
+                "Welcome to Saara Bashirkhel. From our roots here in Madyan, Swat, we have built this business on a foundational promise: absolute accuracy, premium speed, and uncompromised quality. We look forward to helping you make your mark."
+            </p>
+            <div class="owner-details">
+                <h4>Saara Bashirkhel</h4>
+                <p>Founder & Managing Director</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daraz Premium Banner -->
+    <section id="daraz-store" style="padding-top:0;">
+        <div class="daraz-banner">
+            <div class="daraz-info">
+                <span class="daraz-badge">Verified Marketplace Seller</span>
+                <h3>Saara Bashirkhel Digital Hub</h3>
+                <p>Order specialized flash parameters, corporate stamps, and document accessory systems directly to any operational address across Pakistan through our secure digital node on Daraz PK.</p>
+            </div>
+            <a href="https://www.daraz.pk/shop/z8xgq7al/" target="_blank" class="btn btn-daraz" style="white-space: nowrap;">
+                Shop Marketplace
+            </a>
+        </div>
+    </section>
+
+    <!-- Pricing Dashboard Component -->
+    <section id="dashboard">
+        <div class="section-header">
+            <h2 class="section-title">Interactive Pricing Node</h2>
+            <p class="section-subtitle">Configure exact layout parameters and securely queue production metrics directly over digital lines.</p>
+        </div>
+        <div class="dashboard-container">
+            <div class="dashboard-main">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cust-name">Customer Interface Identity</label>
+                        <input type="text" id="cust-name" placeholder="Enter full name" oninput="updateDashboard()">
+                    </div>
+                    <div class="form-group">
+                        <label for="service-select">Target Production Profile</label>
+                        <select id="service-select" onchange="updateDashboard()">
+                            <option value="photostat" data-price="5">Photostat Copy (Rs. 5 / page)</option>
+                            <option value="color-print" data-price="25">Color Printing (Rs. 25 / page)</option>
+                            <option value="flash-stamp" data-price="350">Premium Flash Stamp (Rs. 350 / unit)</option>
+                            <option value="rubber-stamp" data-price="150">Rubber Stamp (Rs. 150 / unit)</option>
+                            <option value="passport-photo" data-price="100">Passport Photos (Rs. 100 / set)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="item-quantity">Production Volumetrics (Pages/Units)</label>
+                        <input type="number" id="item-quantity" value="1" min="1" oninput="updateDashboard()">
+                    </div>
+                    <div class="form-group">
+                        <label for="urgent-delivery">Processing Matrix Speed</label>
+                        <select id="urgent-delivery" onchange="updateDashboard()">
+                            <option value="standard" data-extra="0">Standard Flow (No extra cost)</option>
+                            <option value="urgent" data-extra="50">Expedited Core (+ Rs.150)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="order-instructions">Operational Instructions Meta-Data</label>
+                    <textarea id="order-instructions" rows="3" placeholder="Specify stamp layouts, custom design guidelines, or configuration paths..." oninput="updateDashboard()"></textarea>
+                </div>
+            </div>
+
+            <div class="summary-panel">
+                <div>
+                    <div class="summary-title">Telemetry Overview</div>
+                    <div class="summary-item"><span>Identity:</span><span id="summary-name">Valued Customer</span></div>
+                    <div class="summary-item"><span>Target Matrix:</span><span id="summary-service">Photostat Copy</span></div>
+                    <div class="summary-item"><span>Volume Units:</span><span id="summary-qty">1</span></div>
+                    <div class="summary-item"><span>Velocity State:</span><span id="summary-speed">Standard</span></div>
+                </div>
+                <div>
+                    <div class="summary-total">
+                        <span>Net Value:</span>
+                        <span id="summary-total-val">Rs. 5</span>
+                    </div>
+                    <button class="btn btn-brand" style="width: 100%;" onclick="sendOrderWhatsApp()">
+                        Transmit Order to WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section -->
+    <section id="gallery">
+        <div class="section-header">
+            <h2 class="section-title">Products</h2>
+            <p class="section-subtitle">Explore our elite catalog of custom engineering stamps, long-lasting pre-inked systems, and official layouts.</p>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1.png" alt="Professional Flash Stamp HA3313" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Professional Flash Stamp (HA3313)</h3>
+                    <p class="product-desc">Pre-inked ergonomic design yielding crisp, clear impressions. Available in vibrant Orange, Pink, Blue, and Grey structures.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 350</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'HA3313 Model Stamp')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783739951752.png" alt="Flash Printy Yindemei ER-42" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Flash Printy Yindemei (ER-42)</h3>
+                    <p class="product-desc">Heavy-duty circular layout casing for reliable signature branding. Super fast mechanism with clean re-inking nodes.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 450</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'Yindemei ER-42 Circular')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783739996728.png" alt="Flash Printy Deskmate KL-1443" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Deskmate Flash Series (KL-1443 / 1444)</h3>
+                    <p class="product-desc">Premium corporate desk stamps featuring rapid-drying intense ink matrix configurations. Pre-inked, sleek design layout.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 380</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'Deskmate KL-1443 Series')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740013256.png" alt="Flash Printy Tianhua Stamp" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Tianhua Industrial Seal Stamp</h3>
+                    <p class="product-desc">High-speed durable print parameters designed for heavy office workflows. Multiple crisp background colors supported.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 400</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'Tianhua Seal Stamp')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740024744.png" alt="Flash Stamp Round-1" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Crystal Handle Round Flash Stamp</h3>
+                    <p class="product-desc">Elite aesthetics meeting geometric precision. Models Round-1 and Round-1.2 tailored specifically for distinctive custom logotypes.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 500</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'Crystal Handle Round Stamp')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740724333.png" alt="Portable Pocket Flash Stamp" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Traxx® Portable Pocket Flash Stamp</h3>
+                    <p class="product-desc">Compact, foldable design engineered with signature Traxx premium quality. Replaceable inner pad line for elite mobility.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 320</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'Traxx Pocket Mobile Stamp')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740753865.png" alt="Trodat Mobile Multi-Color Stamp" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Trodat Pocket Multi-Color Matrix</h3>
+                    <p class="product-desc">Pocket-friendly layout variant optimized for multi-color stamp requirements. Long-lasting robust mechanical housing.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 390</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'Trodat Multi-Color Mini')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740771182.png" alt="Shiny Printer R-532D Dater" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Shiny Printer Dater (R-532D)</h3>
+                    <p class="product-desc">Integrated heavy-duty precision calendar wheel system. Ideal for rapid verification, hospital metrics, and official office control codes.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 650</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('rubber-stamp', 'Shiny R-532D Dater Stamp')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740784417.png" alt="Shiny Printer S-827D Self-Inking" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Shiny Printer Boxed Series (S-827D)</h3>
+                    <p class="product-desc">Industrial rectangular self-inking stamp matrix. Yields balanced blueprints for verified corporate profiles and manager parameters.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 580</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('rubber-stamp', 'Shiny S-827D Rectangular')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+     <!-- Product 10 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740642794.png" alt="Premium Flash Stamp HA-1543" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Premium Flash Stamp (HA-1543)</h3>
+                    <p class="product-desc">High-quality rapid inking system offering clean signature and emblem impressions. Built with a durable composite handle and custom-tailored configuration plates.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 360</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'HA-1543 Precision Model')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740674108.png" alt="Diamond Shape Flash Stamp PK1033" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Diamond Shape Flash Stamp (PK1033)</h3>
+                    <p class="product-desc">Features unique polished diamond facets for an elegant desktop aesthetic and balanced pressure distribution. Long-lasting pre-inked technology with a premium envelope casing.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 480</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'PK1033 Diamond Facet Stamp')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 12  -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740699148.png" alt="HB Round Crystal Flash Stamp Series" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">HB Round Crystal Flash Series (HB32 - HB45)</h3>
+                    <p class="product-desc">Luxurious light-refracting crystal handle layouts. Engineered for quick turnaround custom logotypes. Available across multi-size options from HB-32 up to HB-45 parameters.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 520</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'HB Crystal Round Multi-Size')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 13  -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740704075.png" alt="Mini Flash Stamp with Key-Chain" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Mini Pocket Flash Stamp (with Key-Chain)</h3>
+                    <p class="product-desc">The ultimate mobile partner for instant signatures anywhere. Compact, discrete housing with a secure integrated chain loop and multiple refillable ink paths.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 290</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'Mini Key-Chain Pocket Stamp')">Order Setup</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="1783740714381.png" alt="Owner Pocket Flashstamp P-322" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Owner Pocket Flashstamp (P-322)</h3>
+                    <p class="product-desc">Ergonomic slide-and-stamp mechanical chassis featuring high-quality, smudge-proof ink formulas. Yields thousands of crisp text or medical designation impressions cleanly.</p>
+                    <div class="product-meta">
+                        <span class="product-price">Rs. 340</span>
+                        <a href="#dashboard" class="product-btn" onclick="selectProduct('flash-stamp', 'Owner P-322 Slide Stamp')">Order Setup</a>
+               </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Contact & Mapping Environment -->
+    <section id="contact">
+        <div class="contact-layout">
+            <div class="contact-details">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Physical Coordination</h2>
+                <p><strong>📍 Geolocation Matrix:</strong> Toti Khan Plaza, Chail Road, Madyan, Swat, Khyber Pakhtunkhwa, Pakistan.</p>
+                <p><strong>🕒 Operational Hours:</strong> 09:00 – 21:00 PST | Mon – Sat</p>
+                <p><strong>📞 Connection Links:</strong> +92 315 7430208</p>
+                
+                <div class="social-block">
+                    <h4>Network Indexes:</h4>
+                    <div class="social-row">
+                        <a href="https://www.facebook.com/share/1DaYMKB6Xa/" target="_blank" class="btn btn-outline">Facebook Workspace</a>
+                        <a href="https://www.tiktok.com/@saara.zaara?_r=1&_t=ZS-97vJD61teo0" target="_blank" class="btn btn-outline">TikTok Track</a>
+                    </div>
+                </div>
+            </div>
+            <div class="map-frame">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.321!2d72.532!3d35.132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDA3JzU1LjIiTiA3MsKwMzEnNTUuMiJF!5e0!3m2!1sen!2spk!4v1650000000000!5m2!1sen!2spk" 
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Element -->
+    <footer>
+        <p>&copy; 2026 Saara Bashirkhel. Built using clean architectural layout blueprints.</p>
+    </footer>
+
+    <!-- Operational Telemetry Dashboard Scripts -->
+    <script>
+        function updateDashboard() {
+            const nameInput = document.getElementById('cust-name').value.trim();
+            const serviceSelect = document.getElementById('service-select');
+            const qtyInput = Math.max(1, parseInt(document.getElementById('item-quantity').value) || 1);
+            const speedSelect = document.getElementById('urgent-delivery');
+
+            const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+            const basePrice = parseFloat(selectedOption.getAttribute('data-price'));
+            
+            const selectedSpeed = speedSelect.options[speedSpeed.selectedIndex] || speedSelect.options[0];
+            const extraCharge = parseFloat(selectedSpeed.getAttribute('data-extra')) || 0;
+
+            const calculatedTotal = (basePrice * qtyInput) + extraCharge;
+
+            document.getElementById('summary-name').innerText = nameInput ? nameInput : "Valued Customer";
+            document.getElementById('summary-service').innerText = selectedOption.text.split('(')[0].trim();
+            document.getElementById('summary-qty').innerText = qtyInput;
+            document.getElementById('summary-speed').innerText = speedSelect.value === 'urgent' ? "Urgent (+ Rs. 50)" : "Standard";
+            document.getElementById('summary-total-val').innerText = "Rs. " + calculatedTotal;
+        }
+
+        function selectProduct(type, details) {
+            const serviceSelect = document.getElementById('service-select');
+            serviceSelect.value = type;
+            document.getElementById('order-instructions').value = "Selected Product Profile: " + details;
+            updateDashboard();
+        }
+
+        function sendOrderWhatsApp() {
+            const name = document.getElementById('summary-name').innerText;
+            const service = document.getElementById('summary-service').innerText;
+            const qty = document.getElementById('summary-qty').innerText;
+            const speed = document.getElementById('summary-speed').innerText;
+            const total = document.getElementById('summary-total-val').innerText;
+            const instructions = document.getElementById('order-instructions').value.trim();
+
+            let textMessage = `*PRODUCTION TELEMETRY QUEUE - SAARA BASHIRKHEL*%0A%0A`;
+            textMessage += `*Identity:* ${name}%0A`;
+            textMessage += `*Matrix:* ${service}%0A`;
+            textMessage += `*Volume:* ${qty}%0A`;
+            textMessage += `*Speed:* ${speed}%0A`;
+            if(instructions) {
+                textMessage += `*Meta-Data:* ${instructions}%0A`;
+            }
+            textMessage += `%0A*Net Production Value:* ${total}`;
+
+            const whatsappUrl = `https://wa.me/923157430208?text=${textMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
